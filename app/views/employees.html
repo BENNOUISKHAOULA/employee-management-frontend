@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2>Employees</h2>
+    <a href="#!/employees/add" class="btn btn-primary mb-3">Add Employee</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in employees">
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.phone }}</td>
+          <td>
+            <a href="#!/employees/edit/{{ employee.id }}" class="btn btn-warning btn-sm">Edit</a>
+            <button class="btn btn-danger btn-sm" ng-click="deleteEmployee(employee.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
